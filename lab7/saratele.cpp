@@ -4,20 +4,24 @@
 //template<class T> dulciuri<T>
 saratele::saratele()
 {
-	(*this->cod) = 0;
+	this->cod = new int(0);
 	this->nume = " ";
-	(*this->pret) = 0.0;
+	this->pret = new double(0.0);
 }
 
 
 saratele::~saratele()
 {
+	delete cod;
+	delete pret;
+	cod = NULL;
+	pret = NULL;
 	std::cout << "Object destoyed" << std::endl;
 }
 
 saratele::saratele(const saratele& cl)
 {
-	(*this->cod) = (*cl.cod);
+	this->cod = new int(*cl.cod);
 	this->nume = cl.nume;
-	(*this->pret) = (*cl.pret);
+	this->pret = new double(*cl.pret);
 }

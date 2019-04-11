@@ -4,22 +4,24 @@
 //template<class T> dulciuri<T>
 dulciuri::dulciuri()
 {
-	int x = 0;
-	double y = 0.0;
-	this->cod = &x;
+	this->cod = new int(0);
 	this->nume = " ";
-	this->pret = &y;
+	this->pret = new double(0.0);
 }
 
 
 dulciuri::~dulciuri()
 {
+	delete cod;
+	delete pret;
+	cod = NULL;
+	pret = NULL;
 	std::cout << "Object destoyed" << std::endl;
 }
 
 dulciuri::dulciuri(const dulciuri& cl)
 {
-	(*this->cod) = (*cl.cod);
+	this->cod = new int(*cl.cod);
 	this->nume = cl.nume;
-	(*this->pret) = (*cl.pret);
+	this->pret = new double(* cl.pret);
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include<string>
 //template<class T> 
+	
 class dulciuri
 {
 private:
@@ -13,9 +14,9 @@ public:
 	//dulciuri(dulciuri<T>&);
 	dulciuri(const dulciuri&);
 	//getteri
-	int getCod() { return *this->cod; }
+	int* getCod() { return this->cod; }
 	std::string getNume() { return this->nume; }
-	double getPret() { return *this->pret; }
+	double* getPret() { return this->pret; }
 
 	//setteri
 	void setCod(int newValue) { (*this->cod) = newValue; }

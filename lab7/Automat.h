@@ -15,5 +15,7 @@ public:
 	void addS(Repo<saratele> r) { xS.push_back(r); }
 
 
+	Repo<dulciuri> getDelem() { return xD.back(); }
+	Repo<saratele> getSelem() { return xS.back(); }
 };
 

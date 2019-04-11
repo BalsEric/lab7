@@ -8,7 +8,7 @@
 using namespace std;
 int main()
 {
-	teste();
+	//teste();
 
 	dulciuri suc1;
 	suc1.setCod(1);
@@ -37,4 +37,7 @@ int main()
 	a.addD(repoSuc);
 	a.addS(repoBiscuiti);
 
+	cout << a.getDelem().getElem()->getCod() << endl;;
+	cout << a.getSelem().getElem()->getCod();
+	return 0;
 }
