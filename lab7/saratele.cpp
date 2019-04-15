@@ -4,6 +4,7 @@
 //template<class T> dulciuri<T>
 saratele::saratele()
 {
+	std::cout << "Object created";
 	this->cod = new int(0);
 	this->nume = " ";
 	this->pret = new double(0.0);
@@ -14,9 +15,8 @@ saratele::~saratele()
 {
 	delete cod;
 	delete pret;
-	cod = NULL;
-	pret = NULL;
-	std::cout << "Object destoyed" << std::endl;
+	
+	//std::cout << "Object destoyed" << std::endl;
 }
 
 saratele::saratele(const saratele& cl)

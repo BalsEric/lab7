@@ -18,6 +18,7 @@ public:
 		RepoT* r = &this->x.back();
 		return r; 
 	}
+	//int checkCod(int cod);
 };
 
 
@@ -33,5 +34,16 @@ template<class RepoT>Repo<RepoT>::~Repo()
 
 template<class RepoT>void Repo<RepoT>::add(RepoT el)
 {
-	this->x.push_back(el);
+	x.push_back(el);
 }
+/*
+template<class RepoT>int Repo<RepoT>::checkCod(int cod)
+{
+	for (int i = 0; i < x.size(); i++)
+	{
+		if (x.at(i)->getCod() == cod)
+			return i;
+	}
+	return -1;
+}
+*/

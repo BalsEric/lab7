@@ -1,6 +1,7 @@
 #pragma once
 #include "Repo.h"
 #include "saratele.h"
+#include "dulciuri.h"
 #include<vector>
 class Automat
 {
@@ -15,7 +16,13 @@ public:
 	void addS(Repo<saratele> r) { xS.push_back(r); }
 
 
-	Repo<dulciuri> getDelem() { return xD.back(); }
-	Repo<saratele> getSelem() { return xS.back(); }
+	Repo<dulciuri>* getDelem() { 
+		Repo<dulciuri>* el = &this->xD.back();
+		return el;
+	}
+	Repo<saratele>* getSelem() { 
+		Repo<saratele>* el1 = &this->xS.back();
+		return el1; 
+	}
 };
 

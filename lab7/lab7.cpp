@@ -8,7 +8,7 @@
 using namespace std;
 int main()
 {
-	//teste();
+	teste();
 
 	dulciuri suc1;
 	suc1.setCod(1);
@@ -16,28 +16,28 @@ int main()
 	suc1.setPret(5.5);
 
 	dulciuri suc2;
-	suc1.setCod(2);
-	suc1.setNume("Suc");
-	suc1.setPret(3.4);
+	suc2.setCod(2);
+	suc2.setNume("Suc");
+	suc2.setPret(3.4);
 
 	saratele biscuiti;
-	suc1.setCod(1);
-	suc1.setNume("Biscuiti sarati");
-	suc1.setPret(1.0);
-
+	biscuiti.setCod(777);
+	biscuiti.setNume("Biscuiti sarati");
+	biscuiti.setPret(1.0);
+	//cout << biscuiti.getCod();
 	Repo<dulciuri> repoSuc;
 	repoSuc.add(suc1);
 	repoSuc.add(suc2);
 
 	Repo<saratele> repoBiscuiti;
 	repoBiscuiti.add(biscuiti);
-
+	//cout << repoBiscuiti.getElem()->getCod();
 
 	Automat a = Automat();
 	a.addD(repoSuc);
 	a.addS(repoBiscuiti);
-
-	cout << a.getDelem().getElem()->getCod() << endl;;
-	cout << a.getSelem().getElem()->getCod();
+	cout << endl;
+	cout << *a.getDelem()->getElem()->getCod() << endl;
+	cout << a.getSelem()->getElem()->getCod();
 	return 0;
 }
