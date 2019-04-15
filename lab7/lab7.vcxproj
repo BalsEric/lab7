@@ -157,6 +157,7 @@
     <ClCompile Include="Repo.cpp" />
     <ClCompile Include="saratele.cpp" />
     <ClCompile Include="teste.cpp" />
+    <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Automat.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Repo.h" />
     <ClInclude Include="saratele.h" />
     <ClInclude Include="teste.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,15 +1,25 @@
 #include <iostream>
 #include "teste.h"
-#include "dulciuri.h"
-#include "Repo.h"
-#include "Automat.h"
-#include "saratele.h"
+#include "UI.h"
 //#include "Repo.h"
 using namespace std;
 int main()
 {
-	teste();
+	int nr;
+	//teste();
+	UI u;
+	while (true)
+	{
+		nr = u.getCommand();
+		u.Menu(nr);
+	}
 
+
+
+
+
+
+	/*
 	dulciuri suc1;
 	suc1.setCod(1);
 	suc1.setNume("Suc");
@@ -40,4 +50,8 @@ int main()
 	cout << a.getDelem()->getElem()->getCod() << endl;
 	cout << a.getSelem()->getElem()->getCod();
 	return 0;
+	*/
+
+
+
 }

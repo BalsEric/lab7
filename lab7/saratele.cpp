@@ -4,7 +4,7 @@
 //template<class T> dulciuri<T>
 saratele::saratele()
 {
-	std::cout << "Object created";
+	//std::cout << "Object created";
 	this->cod = new int(0);
 	this->nume = " ";
 	this->pret = new double(0.0);

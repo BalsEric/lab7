@@ -18,6 +18,12 @@ public:
 		RepoT* r = &this->x.back();
 		return r; 
 	}
+	int getSize() { return x.size(); }
+
+	RepoT* getElem2(int value) {
+		RepoT* r = &this->x.at(value);
+		return r;
+	}
 	//int checkCod(int cod);
 };
 
