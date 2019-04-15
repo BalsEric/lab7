@@ -37,7 +37,7 @@ int main()
 	a.addD(repoSuc);
 	a.addS(repoBiscuiti);
 	cout << endl;
-	cout << *a.getDelem()->getElem()->getCod() << endl;
+	cout << a.getDelem()->getElem()->getCod() << endl;
 	cout << a.getSelem()->getElem()->getCod();
 	return 0;
 }
