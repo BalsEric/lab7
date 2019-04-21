@@ -1,9 +1,11 @@
 #pragma once
+#include<iostream>
 #include "Repo.h"
 #include "saratele.h"
 #include "dulciuri.h"
 #include<vector>
 #include<tuple>
+using namespace std;
 class Automat
 {
 private:
@@ -25,12 +27,13 @@ public:
 			{
 				auto ex = make_tuple(get<0>(bani.at(i)), get<1>(bani.at(i)) + cantitate);
 				bani.at(i) = ex;
+				break;
 			}
 		}
 	}
 
 	vector<tuple<int, int> > getBani() { return bani; }
-	int giveExchane(int rest)
+	double giveExchane(int rest)
 	{
 		if (rest == 0)
 			return 0;
@@ -57,16 +60,58 @@ public:
 						return 50;
 					}
 					else
-						if (rest == 100)
+					{
+						while (rest >= 50 && get<1>(bani.at(3))>0)
 						{
-							auto ex = make_tuple(get<0>(bani.at(4)), get<1>(bani.at(4)) - 1);
-							bani.at(4) = ex;
-							return 100;
+							rest -= 50;
+							auto ex = make_tuple(get<0>(bani.at(3)), get<1>(bani.at(3)) - 1);
+							bani.at(3) = ex;
+							//return 0;
+						}
+						while (rest >= 10 && get<1>(bani.at(2))>0)
+						{
+							rest -= 10;
+							auto ex = make_tuple(get<0>(bani.at(2)), get<1>(bani.at(2)) - 1);
+							bani.at(2) = ex;
+							//return 0;
+						}
+						while (rest >= 5 && get<1>(bani.at(1))>0)
+						{
+							rest -= 5;
+							auto ex = make_tuple(get<0>(bani.at(1)), get<1>(bani.at(1)) - 1);
+							bani.at(3) = ex;
+							//return 0;
+						}
+						while (rest > 0 && get<1>(bani.at(0))>0)
+						{
+							rest -= 1;
+							auto ex = make_tuple(get<0>(bani.at(0)), get<1>(bani.at(0)) - 1);
+							bani.at(0) = ex;
+							//return 0;
+
+						}
+						if (rest == 0)
+						{
+							return 0;
 						}
 						else
-						{
-							// ceva alg de dat rest
-						}
+							if (rest <= 0.5)
+							{
+								return 0.5;
+							}
+							else
+							{
+								std::cout << "Not enough change !";
+								return NULL;
+							}
+					}
+
+
+
+
+
+		// ceva alg de dat rest
+
 
 
 	}

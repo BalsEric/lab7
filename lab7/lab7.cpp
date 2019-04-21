@@ -1,17 +1,24 @@
 #include <iostream>
 #include "teste.h"
 #include "UI.h"
+#include<vector>
 //#include "Repo.h"
 using namespace std;
 int main()
 {
 	int nr;
-	//teste();
+	teste();
 	UI u;
+	
+	for (std::vector<tuple<int,int>>::size_type i = 0; i != u.a.getBani().size(); i++)
+		std::cout << get<0>(u.a.getBani().at(i)) << " " << get<1>(u.a.getBani().at(i)) << endl;
+
 	while (true)
 	{
 		nr = u.getCommand();
 		u.Menu(nr);
+		for (std::vector<tuple<int, int>>::size_type i = 0; i != u.a.getBani().size(); i++)
+			std::cout << get<0>(u.a.getBani().at(i)) << " " << get<1>(u.a.getBani().at(i)) << endl;
 	}
 
 

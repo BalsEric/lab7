@@ -12,9 +12,9 @@ void teste()
 	suc1.setNume("Suc");
 	suc1.setPret(5.5);
 	assert(suc1.getCod() == 100);
-	cout << suc1.getCod();
+	//cout << suc1.getCod();
 	assert(suc1.getNume() == "Suc");
-	cout << suc1.getNume();
+	//cout << suc1.getNume();
 	assert(suc1.getPret() - 5.5 <= 0.0001);
 	cout << "Object working" << endl;
 	
