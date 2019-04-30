@@ -61,6 +61,7 @@ public:
 					}
 					else
 					{
+						vector<tuple<int, int>> copie = bani;
 						while (rest >= 50 && get<1>(bani.at(3))>0)
 						{
 							rest -= 50;
@@ -79,7 +80,7 @@ public:
 						{
 							rest -= 5;
 							auto ex = make_tuple(get<0>(bani.at(1)), get<1>(bani.at(1)) - 1);
-							bani.at(3) = ex;
+							bani.at(1) = ex;
 							//return 0;
 						}
 						while (rest > 0 && get<1>(bani.at(0))>0)
@@ -97,11 +98,14 @@ public:
 						else
 							if (rest <= 0.5)
 							{
+								auto ex = make_tuple(get<0>(bani.at(0)), get<1>(bani.at(0)) - 1);
+								bani.at(0) = ex;
 								return 0.5;
 							}
 							else
 							{
-								std::cout << "Not enough change !";
+								bani = copie;
+								std::cout << "Not enough change !"<<endl;
 								return NULL;
 							}
 					}

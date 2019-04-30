@@ -2,9 +2,10 @@
 #include "dulciuri.h"
 #include "saratele.h"
 #include "Repo.h"
+#include<fstream>
 #include<iostream>
 using namespace std;
-
+ifstream f("in.txt");
 
 UI::UI()
 {
@@ -21,29 +22,18 @@ UI::~UI()
 void UI::setUp()
 {
 	dulciuri d1;
-	d1.setCod(1);
-	d1.setNume("Cola");
-	d1.setPret(5.5);
+	f >> d1;
 
 	dulciuri d2;
-	d2.setCod(2);
-	d2.setNume("Apa");
-	d2.setPret(3.0);
+	f >> d2;
 
 	dulciuri d3;
-	d3.setCod(3);
-	d3.setNume("Apa Minerala");
-	d3.setPret(3.5);
+	f >> d3;
 
 	dulciuri d4;
-	d4.setCod(4);
-	d4.setNume("Corn cu ciocolata");
-	d4.setPret(4.5);
-
+	f >> d4;
 	dulciuri d5;
-	d5.setCod(5);
-	d5.setNume("Milka");
-	d5.setPret(5.5);
+	f >> d5;
 
 	Repo<dulciuri> suc;
 	suc.add(d1);
@@ -61,25 +51,16 @@ void UI::setUp()
 
 
 	saratele s1;
-	s1.setCod(6);
-	s1.setNume("Covrigi");
-	s1.setPret(2.5);
+	f >> s1;
 
 	saratele s2;
-	s2.setCod(7);
-	s2.setNume("Rulada sarata");
-	s2.setPret(1.0);
+	f >> s2;
 
 	saratele s3;
-	s3.setCod(8);
-	s3.setNume("Biscuiti");
-	s3.setPret(3.5);
+	f >> s3;
 
 	saratele s4;
-	s4.setCod(9);
-	s4.setNume("Chips");
-	s4.setPret(4.5);
-
+	f >> s4;
 
 	Repo<saratele> patiserie;
 	patiserie.add(s1);
@@ -111,7 +92,7 @@ void UI::Menu(int value)
 		for (int i = 0; i < a.getDsize(); i++)
 		{
 			for (int j = 0; j < a.getDelem2(i)->getSize(); j++)
-				cout << a.getDelem2(i)->getElem2(j)->getNume() << " costs " << a.getDelem2(i)->getElem2(j)->getPret() << "lei , cod:" << a.getDelem2(i)->getElem2(j)->getCod() << endl;
+				cout << a.getDelem2(i)->getElem2(j)->getNume() << " costs " << a.getDelem2(i)->getElem2(j)->getPret() << " lei , cod: " << a.getDelem2(i)->getElem2(j)->getCod() << endl;
 		}
 		cout << "Provide money" << endl;
 		cin >> money;
@@ -124,8 +105,9 @@ void UI::Menu(int value)
 				if (a.getDelem2(i)->getElem2(j)->getCod() == x)
 				{
 					double rest = money - a.getDelem2(i)->getElem2(j)->getPret();
-					if (a.giveExchane(rest) != NULL)
-					{
+					a.giveExchane(rest);
+					
+						/*
 						while (money >= 50)
 						{
 							a.addMoney(50, 1);
@@ -146,9 +128,10 @@ void UI::Menu(int value)
 							a.addMoney(1, 1);
 							money -= 1;
 						}
+						*/
 						//delete a.getDelem2(i)->getElem2(j);
 
-					}
+					
 
 				}
 			}
@@ -171,8 +154,9 @@ void UI::Menu(int value)
 				if (a.getSelem2(i)->getElem2(j)->getCod() == x)
 				{
 					double rest = money - a.getSelem2(i)->getElem2(j)->getPret();
-					if (a.giveExchane(rest) != NULL)
-					{
+					a.giveExchane(rest);
+					
+						/*
 						while (money >= 50)
 						{
 							a.addMoney(money, 1);
@@ -193,9 +177,10 @@ void UI::Menu(int value)
 							a.addMoney(money, 1);
 							money -= 1;
 						}
+						*/
 						//delete a.getSelem2(i)->getElem2(j);
 
-					}
+					
 
 				}
 			}

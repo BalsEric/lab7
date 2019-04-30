@@ -1,0 +1,9 @@
+cola 32.2 1
+Apa 12.3 2
+Pda 6.2 3
+dsa 9.0 4
+aa 2.3 5
+av 8.2 6
+op 13.2 7
+lvadc 5.3 8
+poz 1.1 9

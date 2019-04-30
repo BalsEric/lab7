@@ -155,6 +155,7 @@
     <ClCompile Include="dulciuri.cpp" />
     <ClCompile Include="lab7.cpp" />
     <ClCompile Include="Repo.cpp" />
+    <ClCompile Include="RepoFile.cpp" />
     <ClCompile Include="saratele.cpp" />
     <ClCompile Include="teste.cpp" />
     <ClCompile Include="UI.cpp" />
@@ -163,9 +164,18 @@
     <ClInclude Include="Automat.h" />
     <ClInclude Include="dulciuri.h" />
     <ClInclude Include="Repo.h" />
+    <ClInclude Include="RepoFile.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="saratele.h" />
     <ClInclude Include="teste.h" />
     <ClInclude Include="UI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="lab7.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="in.txt" />
+    <Text Include="out.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

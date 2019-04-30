@@ -6,6 +6,7 @@ using namespace std;
 template<class RepoT>
 class Repo
 {
+
 private:
 	vector<RepoT> x;
 public:
@@ -38,7 +39,8 @@ template<class RepoT>Repo<RepoT>::~Repo()
 {
 }
 
-template<class RepoT>void Repo<RepoT>::add(RepoT el)
+template<class RepoT>
+void Repo<RepoT>::add(RepoT el)
 {
 	x.push_back(el);
 }

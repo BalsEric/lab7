@@ -25,3 +25,25 @@ dulciuri::dulciuri(const dulciuri& cl)
 	this->nume = cl.nume;
 	this->pret = new double(* cl.pret);
 }
+
+istream& operator>> (istream& in, dulciuri &s)
+{
+	//cout << "Im hewre";
+	//int x, y;
+	//std::string s1;
+	in >> s.nume;
+	
+	//s.setCod(x);
+   // getline(in,s.nume)
+	//s.setNume(s1);
+	in >> *s.pret;
+	in >> *s.cod;
+	//s.setPret(y);
+	return in;
+}
+
+ostream& operator<< (ostream& out, dulciuri& s)
+{
+	out << s.getNume() << " costa " << s.getPret() << " cu codul " << s.getCod() << std::endl;
+	return out;
+}
