@@ -10,8 +10,10 @@ ifstream f("in.txt");
 UI::UI()
 {
 	cout << "Welcome !" << endl;
+	cout << "-----------------------------" << endl;
 	cout << "For Sweets . Press 1" << endl;
 	cout << "For Salty . Press 2" << endl;
+	cout << "-----------------------------" << endl;
 	setUp();
 }
 
@@ -94,6 +96,7 @@ void UI::Menu(int value)
 			for (int j = 0; j < a.getDelem2(i)->getSize(); j++)
 				cout << a.getDelem2(i)->getElem2(j)->getNume() << " costs " << a.getDelem2(i)->getElem2(j)->getPret() << " lei , cod: " << a.getDelem2(i)->getElem2(j)->getCod() << endl;
 		}
+		cout << "-----------------------------" << endl;
 		cout << "Provide money" << endl;
 		cin >> money;
 		cout << "Provide the code to buy" << endl;
@@ -104,8 +107,13 @@ void UI::Menu(int value)
 			{
 				if (a.getDelem2(i)->getElem2(j)->getCod() == x)
 				{
-					double rest = money - a.getDelem2(i)->getElem2(j)->getPret();
-					a.giveExchane(rest);
+					if (money < a.getDelem2(i)->getElem2(j)->getPret())
+						cout << "Not enough funds !";
+					else
+					{
+						double rest = money - a.getDelem2(i)->getElem2(j)->getPret();
+						a.giveExchane(rest);
+					}
 					
 						/*
 						while (money >= 50)
@@ -143,6 +151,7 @@ void UI::Menu(int value)
 			for (int j = 0; j < a.getSelem2(i)->getSize(); j++)
 				cout << a.getSelem2(i)->getElem2(j)->getNume() << " costs " << a.getSelem2(i)->getElem2(j)->getPret() << "lei, cod:" << a.getSelem2(i)->getElem2(j)->getCod() << endl;
 		}
+		cout << "-----------------------------" << endl;
 		cout << "Provide money" << endl;
 		cin >> money;
 		cout << "Provide the code to buy" << endl;
@@ -153,8 +162,13 @@ void UI::Menu(int value)
 			{
 				if (a.getSelem2(i)->getElem2(j)->getCod() == x)
 				{
-					double rest = money - a.getSelem2(i)->getElem2(j)->getPret();
-					a.giveExchane(rest);
+					if (money < a.getSelem2(i)->getElem2(j)->getPret())
+						cout << "Not enough funds !";
+					else
+					{
+						double rest = money - a.getSelem2(i)->getElem2(j)->getPret();
+						a.giveExchane(rest);
+					}
 					
 						/*
 						while (money >= 50)

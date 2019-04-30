@@ -20,18 +20,21 @@ int main()
 	
 	
 	int nr;
-	teste();
+	//teste();
 	UI u;
-
+	
+	cout << "Money in the automant :" << endl;
 	for (std::vector<tuple<int,int>>::size_type i = 0; i != u.a.getBani().size(); i++)
-		std::cout << get<0>(u.a.getBani().at(i)) << " " << get<1>(u.a.getBani().at(i)) << endl;
-
+		std::cout << get<0>(u.a.getBani().at(i)) << " lei . Quantity: " << get<1>(u.a.getBani().at(i)) << endl;
+	cout << "-----------------------------" << endl;
 	while (true)
 	{
 		nr = u.getCommand();
 		u.Menu(nr);
+		cout << "Money in the automant :" << endl;
 		for (std::vector<tuple<int, int>>::size_type i = 0; i != u.a.getBani().size(); i++)
-			std::cout << get<0>(u.a.getBani().at(i)) << " " << get<1>(u.a.getBani().at(i)) << endl;
+			std::cout << get<0>(u.a.getBani().at(i)) << " lei .	Quantity: " << get<1>(u.a.getBani().at(i)) << endl;
+		cout << "-----------------------------" << endl;
 	}
 
 
